@@ -36,10 +36,10 @@ Session = sessionmaker(bind=engine)
 
 
 class BlogPost(Base):  # type: ignore
-    __tablename__ = "blog_posts"
+    __tablename__ = "blogposts"
     id = Column(UUID(as_uuid=True), primary_key=True,
                 index=True, default=uuid4)
-    title = Column(String, unique=True)
+    title = Column(String)
     description = Column(String, nullable=True)
     created_at = Column(DateTime, default=datetime.now)
 
